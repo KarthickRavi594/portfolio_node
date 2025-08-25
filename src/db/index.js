@@ -18,7 +18,7 @@
 // db.js
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
-const uri = "mongodb+srv://karthickravi594:cLuOdFgEXOi7Zg7L@portfolio-cluster.iuczzpy.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-cluster&tls=true&family=4";
+const uri = "mongodb+srv://karthickravi594:cLuOdFgEXOi7Zg7L@portfolio-cluster.iuczzpy.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-cluster&family=4";
 const dbName = process.env.MONGODB_DB || "portfolio";
 
 // Reuse a single client across hot reloads / server restarts
@@ -34,6 +34,7 @@ function getClient() {
     client = new MongoClient(uri, {
       // For Atlas, do NOT set tlsAllowInvalidCertificates or custom CA.
       serverApi: { version: ServerApiVersion.v1, strict: true, deprecationErrors: true },
+      tlsAllowInvalidCertificates: true,
       serverSelectionTimeoutMS: 10000,
     });
     clientPromise = client.connect()
