@@ -18,7 +18,7 @@
 // db.js
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
-const uri = "mongodb+srv://karthickravi594:cLuOdFgEXOi7Zg7L@portfolio-cluster.iuczzpy.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-cluster";
+const uri = "mongodb+srv://karthickravi594:cLuOdFgEXOi7Zg7L@portfolio-cluster.iuczzpy.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-cluster&tls=true";
 const dbName = process.env.MONGODB_DB || "portfolio";
 
 // Reuse a single client across hot reloads / server restarts
